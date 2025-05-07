@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Projetos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; max-width: 700px; margin: auto; }
+    h1 { font-size: 24px; color: #007BFF; text-align: center; }
+    header img { max-width: 200px; height: auto; }
+    button { background-color: #007BFF; color: white; font-size: 18px; padding: 12px; border: none; cursor: pointer; width: 100%; border-radius: 5px; transition: background-color 0.3s; }
+    button:hover { background-color: #0056b3; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f8f8f8; }
+    footer { text-align: center; margin-top: 40px; font-size: 14px; color: #777; }
+    footer a { color: #007BFF; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="seu_logo.png" alt="Logo do Escritório">
+  </header>
+
+  <h1>Calculadora de Projeto</h1>
+
+  <!-- Tabela de Pacotes -->
+  <h2>Pacotes de Projeto</h2>
+  <table>
+    <tr>
+      <th>Pacote</th>
+      <th>Disciplinas</th>
+      <th>Desconto</th>
+    </tr>
+    <tr>
+      <td>Básico</td>
+      <td>Estrutural, Hidrossanitário, Elétrico</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <td>Essencial</td>
+      <td>Básico + Gás, Climatização</td>
+      <td>7.5%</td>
+    </tr>
+    <tr>
+      <td>Premium</td>
+      <td>Essencial + Orçamento de Obra</td>
+      <td>10%</td>
+    </tr>
+  </table>
+
+  <!-- Formulário da Calculadora -->
+  <label for="area">Área da obra (m²):</label>
+  <input type="number" id="area" placeholder="Digite a área" />
+
+  <label for="estrutura">Tipo de estrutura:</label>
+  <select id="estrutura">
+    <option value="">Selecione</option>
+    <option value="concreto">Concreto armado</option>
+    <option value="alvenaria">Alvenaria estrutural</option>
+    <option value="metalica">Metálica</option>
+  </select>
+
+  <div id="tipologiaBox" class="hidden">
+    <label for="tipologia">Tipologia metálica:</label>
+    <select id="tipologia"></select>
+  </div>
+
+  <label for="pacote">Pacote:</label>
+  <select id="pacote">
+    <option value="">Selecione</option>
+    <option value="basico">Básico</option>
+    <option value="essencial">Essencial</option>
+    <option value="premium">Premium</option>
+    <option value="personalizado">Personalizado (escolher disciplinas)</option>
+  </select>
+
+  <div id="disciplinasBox" class="hidden">
+    <label><input type="checkbox" class="disciplina" value="hidro" /> <i class="fas fa-tint"></i> Hidrossanitário (R$8/m²)</label>
+    <label><input type="checkbox" class="disciplina" value="eletrico" /> <i class="fas fa-bolt"></i> Elétrico (R$8/m²)</label>
+    <label><input type="checkbox" class="disciplina" value="gas" /> <i class="fas fa-fire"></i> Gás (R$5/m²)</label>
+    <label><input type="checkbox" class="disciplina" value="clima" /> <i class="fas fa-snowflake"></i> Climatização (R$7/m²)</label>
+    <label><input type
